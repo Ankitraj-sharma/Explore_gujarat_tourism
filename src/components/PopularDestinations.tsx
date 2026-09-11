@@ -406,8 +406,11 @@ export const PopularDestinations: React.FC<PopularDestinationsProps> = ({
                   <button
                     key={reg}
                     onClick={() => {
-                      if (reg === 'All Regions') setSearchQuery('');
-                      else setSearchQuery((reg || '').split(' ')[0] || reg);
+                      if (reg === 'All Regions') {
+                        setSearchQuery('');
+                      } else {
+                        setSearchQuery(reg);
+                      }
                       setShowFilterModal(false);
                     }}
                     className="p-2 rounded-xl border border-slate-200 hover:border-orange-500 text-xs font-semibold text-slate-700 text-left transition-colors"
